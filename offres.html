@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="./src/output.css" rel="stylesheet">
+    <title>Offres d'emploi</title>
+</head>
+<body class="bg-neutral-100">
+    <nav class="bg-gray-900 fixed-top p-5">
+        <ul class="text-neutral-50 flex justify-evenly">
+            <li><a class="hover:text-green-600" href="./index.html">Accueil</a></li>
+            <li><a class="hover:text-green-600" href="./ea.html">Les EA</a></li>
+            <li><a class="hover:text-green-600" href="./offres.html">Offres d'emploi</a></li>
+            <li><a class="hover:text-green-600" href="./login.html">S'identifier</a></li>
+        </ul>
+    </nav>
+
+    <section class="bg-[#101828] py-10">
+        <article class="border rounded-3xl shadow p-20 flex justify-center gap-5 mt-auto m-auto max-w-[1200px] bg-zinc-200">
+            <input class="border rounded-xl p-2 w-[540px]" type="text" placeholder="Rechercher un emploi, une entreprise..." name="Searchbar">
+            <input class="border rounded-xl p-2 cursor-pointer" type="button" value="Rechercher">
+        </article>
+    </section>
+
+    <main></main>
+
+    <script src="/offres.js"></script>
+</body>
+</html>
