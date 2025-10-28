@@ -1,43 +1,30 @@
+const API_URL = "http://ealareunion.local/wp-json/wp/v2/pages"; 
 
-async function loadAllPosts() {
-  const main = document.querySelector('main'); // cible le <main>
-  
-  function decodeHtml(html) {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
-    return doc.documentElement.textContent || '';
-  }
-
+async function chargerOffres() {
   try {
-    // Récupération des posts depuis l'API WordPress
-    const response = await fetch("http://ealareunion.local/wp-json/wp/v2/pages?slug=${offres-demploi}");
-    const posts = await response.json();
-    console.log(posts); // pour voir tous les posts dans la console
+    const res = await fetch(API_URL);
+    if (!res.ok) throw new Error("Erreur API : " + res.status);
+    
+    const offres = await res.json();
+    const container = document.getElementById("offres");
 
-    if (posts.length > 0) {
-      const post = posts[0];
-      const postDiv = document.createElement('div');
-      postDiv.classList.add('post');
+      offres.forEach(offre => {
+        const bloc = document.createElement("div");
+        bloc.className = "bg-white p-4 rounded-lg shadow";
 
-      const titleEl = document.createElement('h2');
-      titleEl.textContent = decodeHtml (post.title.rendered);
-      titleEl.className = 'text-2xl font-bold text-green-700 mb-4 mt-4';
+        bloc.innerHTML = `
+          <h2 class="text-xl font-semibold mb-2">${offre.title.rendered}</h2>
+          <p><strong>Localisation :</strong> ${offre.acf.location || "Non précisée"}</p>
+          <p><strong>Contrat :</strong> ${offre.acf.contract_type || "Non précisé"}</p>
+          <p><strong>Salaire :</strong> ${offre.acf.salary || "Non précisé"}</p>
+        `;
 
-      const contentEl = document.createElement('div');
-      contentEl.className = 'text-2xl mt-10';
-      const fragment = document.createRange().createContextualFragment(post.content.rendered);
-      contentEl.appendChild(fragment); 
-
-      postDiv.appendChild(titleEl);
-      postDiv.appendChild(contentEl);
-      main.appendChild(postDiv);
-    };
+        container.appendChild(bloc);
+      });
 
   } catch (error) {
-    console.error('Erreur:', error);
-    main.innerText = "Impossible de charger les posts.";
+    console.error("Erreur lors du fetch :", error);
   }
 }
 
-// Appel de la fonction
-loadAllPosts();
+chargerOffres();
