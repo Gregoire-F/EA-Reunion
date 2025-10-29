@@ -1,6 +1,7 @@
 const API_URL = "http://ealareunion.local/wp-json/wp/v2/offre";
 const container = document.getElementById("offres");
 const selectFiltre = document.getElementById("filtreContrat");
+
 let toutesOffres = [];
 
 // Récupération des offres
@@ -35,6 +36,7 @@ function afficherOffres(offres) {
 
     card.innerHTML = `
       <h2 class="text-xl font-bold mb-2">${offre.title.rendered}</h2>
+      <p><strong>Entreprise :</strong> ${acf.entreprise_recruteuse || "Non précisé"}</p>
       <p><strong>Description :</strong> ${acf.description || "Non précisé"}</p>
       <p><strong>Salaire :</strong> ${acf.salaire || "Non précisé"}</p>
       <p><strong>Type de contrat :</strong> ${acf.type_de_contrat || "Non précisé"}</p>
