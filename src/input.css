@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "daisyui";
 @font-face {
     font-family: 'Manrope';
     src: url('/src/fonts/Manrope-VariableFont_wght.ttf') format(truetype);

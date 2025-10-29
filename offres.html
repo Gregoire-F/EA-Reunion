@@ -18,17 +18,25 @@
     </nav>
 
     <section class="bg-[#101828] py-10">
-        <article class="border rounded-3xl shadow p-20 flex justify-center gap-5 mt-auto m-auto max-w-[1000px] bg-zinc-200">
+        <article class="border rounded-3xl shadow p-20 flex justify-center gap-5 mt-auto m-auto container bg-zinc-200">
             <input class="border rounded-xl p-3 w-[540px]" type="text" placeholder="Rechercher un emploi, une entreprise..." name="Searchbar">
             <input class="border text-white bg-green-700 hover:bg-green-800 transition rounded-xl p-3 cursor-pointer" type="button" value="Rechercher">
         </article>
     </section>
     
     <div class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold mb-8">Offres d'emploi à La Réunion</h1>
-    <div id="offres-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Les cards seront injectées ici -->
-    </div>
+    <h1 class="text-3xl font-bold mb-8 text-center">Offres d'emploi à La Réunion</h1>
+    <div class="mb-6 text-center">
+            <label for="filtreContrat" class="mr-2 font-bold">Filtrer par contrat :</label>
+            <select id="filtreContrat" class="border p-2 rounded">
+                <option value="all">Tous</option>
+                <option value="CDI">CDI</option>
+                <option value="CDD">CDD</option>
+                <option value="Stage">Intérim</option>
+                <option value="Stage">Stage</option>
+            </select>
+        </div>
+    <div id="offres"></div>
     </div>
 
     <script src="/offres.js"></script>
