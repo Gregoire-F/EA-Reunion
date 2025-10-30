@@ -21,8 +21,8 @@
         <article class="border rounded-3xl shadow max-w-[800px] p-16 gap-4 mt-auto m-auto container bg-zinc-200">
             
             <div class="flex max-sm:flex-col sm:flex-col lg:flex-row gap-3">
-            <input class="border rounded-xl p-3 flex-1" type="text" placeholder="Rechercher un emploi, une entreprise...">
-            <input class="border text-white bg-green-700 hover:bg-green-600 transition rounded-xl p-3 cursor-pointer" type="button" value="Rechercher">
+            <input class="border rounded-xl p-3 flex-1"  id="recherche" type="text" placeholder="Rechercher un emploi, une entreprise...">
+            <!-- <input class="border text-white bg-green-700 hover:bg-green-600 transition rounded-xl p-3 cursor-pointer" type="button" value="Rechercher"> -->
             </div>
 
             <div class="mt-10 flex flex-row justify-between max-sm:flex-col md:flex-row">
@@ -38,12 +38,9 @@
                 <select id="filtreLocalisation" class="border p-3 px-4 rounded bg-[#101828] text-white">
                 </select>
                 
-
-                
-                <select id="filtreOrdreAlpha" class="border p-3 px-4 rounded bg-[#101828] text-white">
-                        <option value="all">Trier par ordre alphabétique</option>
-                        <option value="croissant">De A à Z</option>
-                        <option value="decroissant">De Z à A</option>
+                <select id="filtreDate" class="border p-3 px-4 rounded bg-[#101828] text-white">
+                        <option value="recent">Les plus récentes</option>
+                        <option value="ancien">Les plus anciennes</option>
                 </select>
             </div> 
 
