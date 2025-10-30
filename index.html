@@ -1,84 +1,138 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="./src/output.css" rel="stylesheet">
+    <link href="./src/output.css" rel="stylesheet" />
     <title>Document</title>
-</head>
-<body class="bg-neutral-100 font-[manrope]">
+  </head>
+  <body class="bg-neutral-100 font-[manrope]">
     <nav class="bg-gray-900 fixed-top p-5">
-        <ul class="text-neutral-50 flex justify-evenly">
-            <li><a class="hover:text-green-600" href="./index.html">Accueil</a></li>
-            <li><a class="hover:text-green-600" href="./ea.html">Les EA</a></li>
-            <li><a class="hover:text-green-600" href="./offres.html">Offres d'emploi</a></li>
-            <li><a class="hover:text-green-600" href="./login.html">S'identifier</a></li>
-        </ul>
+      <ul class="text-neutral-50 flex justify-evenly">
+        <li><a class="hover:text-green-600" href="./index.html">Accueil</a></li>
+        <li><a class="hover:text-green-600" href="./ea.html">Les EA</a></li>
+        <li>
+          <a class="hover:text-green-600" href="./offres.html"
+            >Offres d'emploi</a
+          >
+        </li>
+        <li>
+          <a class="hover:text-green-600" href="./login.html">S'identifier</a>
+        </li>
+      </ul>
     </nav>
 
     <div class="relative w-full h-screen overflow-hidden">
-        <video 
-            src="/src/img/857048-hd_1920_1080_24fps.mp4" 
-            autoplay 
-            muted 
-            loop 
-            playsinline
-            class="absolute inset-0 w-full h-full object-cover">
-        </video>
+      <video
+        src="/src/img/857048-hd_1920_1080_24fps.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        class="absolute inset-0 w-full h-full object-cover"
+      ></video>
 
-        <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
-            <h1 class="text-[clamp(1rem,3vw,4rem)] font-semibold pointer-events-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
-                Entreprises Adaptées de l'île de La Réunion</h1>
+      <div
+        class="absolute inset-0 flex flex-col items-center justify-center text-white text-center"
+      >
+        <h1
+          class="text-[clamp(1rem,3vw,4rem)] font-semibold pointer-events-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]"
+        >
+          Entreprises Adaptées de l'île de La Réunion
+        </h1>
 
-            <a id="#section2" href="#section2" 
-            class="bg-white/20 backdrop-blur-sm hover:bg-white/40 mt-20 text-white font-medium px-6 py-3 rounded-full 
-                   drop-shadow-md text-[clamp(1rem,3vw,1.3rem)]">
-                Découvrir les EA 
-            </a>
-        </div>
+        <p class="mt-4 text-[clamp(1rem,3vw,2rem)] font-light">
+          Travailler avec une EA, c’est allier performance, impact social et
+          qualité.
+        </p>
 
+        <a
+          id="btn-header"
+          class="bg-white/20 backdrop-blur-sm hover:bg-white/40 mt-20 text-white font-medium px-6 py-3 rounded-full drop-shadow-md text-[clamp(1rem,3vw,1.3rem)] cursor-pointer"
+        >
+          Découvrir les EA
+        </a>
+      </div>
     </div>
- 
-   <main class="mx-auto py-16 bg-[#101828] opacity-88 text-white">
 
-    <div><h2 id="section2" class="mb-10 text-[clamp(1rem,3vw,2rem)] font-bold uppercase text-center bg-green-700 p-5 text-white">Travailler avec une Entreprise Adaptée ?</h2></div>
+    <main class="mx-auto py-16 bg-zinc-100 text-[#101828]">
+      <div>
+        <h2
+          id="section2"
+          class="mb-10 text-[clamp(1rem,3vw,2rem)] font-bold uppercase text-center bg-green-700 p-5 text-white"
+        >
+          Externaliser vos activités à une Entreprise Adaptée !
+        </h2>
+      </div>
 
-    <section class="flex-col-2 m-auto mb-10 flex justify-center text-[clamp(1rem,3vw,1.5rem)]">
-        <ul>
-            <li><span class="text-green-600 font-bold">Externalisez</span> les tâches indispensables et chronophages</li>
-            <li><span class="text-green-600 font-bold">Diminuez les contributions AGEFIPH/FIPHFP</span> par des aides financières</li>
-            <li><span class="text-green-600 font-bold">Engagement RSE fort</span> et <span class="text-green-600 font-bold">valorisation</span> de l'image de votre entreprise</li>
-            <li><span class="text-green-600 font-bold">Compétitivité</span> des entreprises adaptées grâce à des tarifs réduits</li>
-            <li><span class="text-green-600 font-bold">Haute qualité</span> de travail</li>
-            <li><span class="text-green-600 font-bold">Engagement dans l'économie sociale et solidaire</span> Réunionnaise</li>
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch container mx-auto p-6 bg-zinc-200 rounded-2xl">
+    
+        <ul class="text-[clamp(1rem,3vw,1.5rem)] flex flex-col justify-between h-full mx-auto">
+            <li>✅ Engagement RSE fort</li>
+            <li>✅ Compétitivité accrue grâce aux tarifs réduits EA</li>
+            <li>✅ Économies sur les contributions AGEFIPH</li>
+            <li>✅ Qualité des travaux rendus</li>
+            <li>✅ Amélioration de votre image perçue</li>
         </ul>
+    
+    <div class="flex items-stretch">
+        <img
+        src="/src/img/pexels-fauxels-3184291_resultat.webp"
+        alt="Collaboration EA"
+        class="rounded-lg shadow-md w-full h-auto"
+        />
+    </div>
     </section>
 
-    <div><h2 id="section2" class="mb-10 text-[clamp(1rem,3vw,2rem)] font-bold uppercase text-center bg-green-700 p-5 text-white">Impact et chiffres clés</h2></div>
 
-    <section class="m-auto mb-10 text-[clamp(1rem,3vw,1.5rem)]">
+      <div>
+        <h2
+          id=""
+          class="mb-10 mt-10 text-[clamp(1rem,3vw,2rem)] font-bold uppercase text-center bg-green-700 p-5 text-white"
+        >
+          Impact et chiffres clés
+        </h2>
+      </div>
+
+      <section class="m-auto mb-10 text-[clamp(1rem,3vw,1.5rem)]">
         <ul class="flex justify-evenly">
-            <li>32434 personnes avec une RQTH</li>
-            <li>7 entreprises adaptées engagées pour l'emploi inclusif</li>
-            <li>+160 personnes engagées dans les EA</li>
+          <li>32434 personnes avec une RQTH</li>
+          <li>7 entreprises adaptées engagées pour l'emploi inclusif</li>
+          <li>+160 personnes engagées dans les EA</li>
         </ul>
-    </section>
+      </section>
 
-    <div>
-        <h2 id="section2" class="mb-10 text-[clamp(1rem,3vw,2rem)] font-bold uppercase text-center bg-green-700 p-5 text-white">Vous souhaitez rejoindre une EA ?</h2>
-    </div>
+      <div>
+        <h2
+          id=""
+          class="mb-11 text-[clamp(1rem,3vw,2rem)] font-bold uppercase text-center bg-green-700 p-5 text-white"
+        >
+          Vous souhaitez rejoindre une EA ?
+        </h2>
+      </div>
 
-    <section class="m-auto text-[clamp(1rem,3vw,1.5rem)]">
-        <div class="text-center"><p>Une entreprise adaptée offre un lieu de travail adaptés aux handicaps et besoins de chacun. Le dispositif EA est particulièrement adapté aux personnes souffrant de TSA. Les personnes éloignées de l'emploi peuvent retrouver un épanouissement personnel en intégrant une entreprise adaptée afin de s'accomplir professionnellement.</p>
+      <section class="m-auto text-[clamp(1rem,3vw,1.5rem)]">
+        <div>
+          <p>
+            Une entreprise adaptée offre un lieu de travail adaptés aux
+            handicaps et besoins de chacun. <br />
+            Le dispositif EA est particulièrement adapté aux personnes souffrant
+            de TSA. <br />
+            Les personnes éloignées de l'emploi peuvent retrouver un
+            épanouissement personnel en intégrant une entreprise adaptée afin de
+            s'accomplir professionnellement.
+          </p>
         </div>
-        <div class="flex justify-center mt-5"><button class="cursor-pointer rounded-md bg-green-700 px-4 py-3 text-center text-[clamp(0.875rem,3vw,1.35rem)] font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-green-600">
-        <a href="./offres.html">Rejoindre une EA </a>
-        </button>
+        <div class="flex justify-center mt-5">
+          <button
+            class="cursor-pointer rounded-md bg-green-700 px-4 py-3 text-center text-[clamp(0.875rem,3vw,1.35rem)] font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-green-600 mt-5"
+          >
+            <a href="./offres.html">Rejoindre une EA </a>
+          </button>
         </div>
-    </section>
-</div>
-
-   </main>
-</body>
+      </section>
+    </main>
+    <script src="index.js"></script>
+  </body>
 </html>
