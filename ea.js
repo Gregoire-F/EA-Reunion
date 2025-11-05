@@ -85,16 +85,25 @@ function afficherDetail(id) {
       detailContainer.classList.remove("hidden");
 
       detailContainer.innerHTML = `
-        <h2 class="text-2xl font-bold text-center mt-4 mb-10">${acf.titre_ || "Non précisé"}</h2>
+        <div class="mb-6 mt-6 mx-auto max-w-2xl bg-green-700 text-neutral-100 p-6 rounded-lg shadow-md">
+        <h2 class="text-[clamp(1rem,3vw,2rem)] font-bold text-center mt-4">${acf.titre_ || "Non précisé"}</h2>
+        <hr>
+        <p class="text-center mb-4 mt-2">${acf.valeur || "Non précisé"}</p>
         <p><strong>Contact :</strong> ${acf.contact || "Non précisé"}</p>
         <p><strong>Adresse :</strong> ${acf.adresse || "Non précisé"}</p>
-        <p><strong>Site Internet :</strong>${acf.site_internet
+        <p><strong>Site Internet : </strong>${acf.site_internet
         ? `<a href="${acf.site_internet}" target="_blank" rel="noopener noreferrer" class="hover:underline">
           ${acf.site_internet}
         </a>`
         : "Non précisé"}</p>
+        </div>
+        <div class="mb-6 mt-6 mx-auto max-w-2xl bg-neutral-100 p-6 rounded-lg shadow-md">
         <p><strong>Présentation :</strong> ${acf.presentation || "Non précisé"}</p>
+        <p class="mt-2"><strong>Dirigeant :</strong> ${acf.dirigeant || "Non précisé"}</p>
+        </div>
+        <div class="mb-6 mt-6 mx-auto max-w-2xl bg-neutral-100 p-6 rounded-lg shadow-md">
         <p><strong>Activités externalisables :</strong> ${acf.activites_externalisables || "Non précisé"}</p>
+        </div>
         <button id="retour" class="mt-6 cursor-pointer block hover:underline">← Retour à la liste</button>
       `;
 
