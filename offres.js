@@ -151,3 +151,14 @@ selectFiltre.addEventListener("change", appliquerFiltres);
 selectLocalisation.addEventListener("change", appliquerFiltres);
 selectDate.addEventListener("change", appliquerFiltres);
 inputRecherche.addEventListener("input", appliquerFiltres);
+
+// Menu Burger 
+const burger = document.getElementById("burger");
+const nav = document.getElementById("menu");
+
+burger.addEventListener("click", () => {
+  burger.classList.toggle("active"); // animation des barres
+  nav.classList.toggle("open"); // slide du menu mobile
+  const expanded = burger.getAttribute("aria-expanded") === "true";
+  burger.setAttribute("aria-expanded", !expanded);
+});

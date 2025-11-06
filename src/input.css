@@ -9,3 +9,105 @@
 .font-manrope {
   font-family: 'Manrope', sans-serif;
 }
+/* --- Bouton burger --- */
+.burger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  width: 2.4rem;
+  height: 3rem;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  z-index: 50;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  width: 100%;
+  height: 0.3rem;
+  background: #f0f1f5;
+  transition: all 0.4s ease;
+}
+
+/* --- Animation du burger en croix --- */
+.burger.active span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+  background-color: #fff;
+}
+
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+  background-color: #fff;
+}
+
+/****************************
+ NAVIGATION MOBILE
+****************************/
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100vh;
+  background: rgba(16, 24, 40); /* bg de la nav mobile */
+  -webkit-backdrop-filter: blur(20px); /* compatibilité iOS Safari */
+  backdrop-filter: blur(20px);
+  padding: 12rem 3rem;
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  z-index: 40;
+}
+
+.nav.open {
+  transform: translateX(0);
+}
+
+.nav-liste {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.nav-item a {
+  font-family: 'Barlow Condensed', sans-serif;
+  color: #fff;
+  letter-spacing: 0.10rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.nav-item a:hover {
+  color: #059669; /* vert au hover */
+}
+/* --- RESPONSIVE : Desktop --- */
+@media (min-width: 768px) {
+  .nav {
+    position: static;
+    transform: none;
+    height: auto;
+    width: auto;
+    background: transparent;
+    backdrop-filter: none;
+    padding: 0;
+    flex-direction: row;
+  }
+
+  .nav-liste {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .burger {
+    display: none; /* cache le burger sur desktop */
+  }
+}

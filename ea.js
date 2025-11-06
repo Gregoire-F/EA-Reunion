@@ -104,7 +104,7 @@ function afficherDetail(id) {
         <div class="mb-6 mt-6 mx-auto max-w-2xl bg-neutral-100 p-6 rounded-lg shadow-md">
         <p><strong>Activités externalisables :</strong> ${acf.activites_externalisables || "Non précisé"}</p>
         </div>
-        <button id="retour" class="mt-6 cursor-pointer block hover:underline">← Retour à la liste</button>
+        <button id="retour" class="mt-6 bg-gray-800 text-neutral-100 rounded-lg p-3 cursor-pointer block hover:underline">⬅ Retour à la liste</button>
       `;
 
       document.getElementById("retour").addEventListener("click", () => {
@@ -114,3 +114,14 @@ function afficherDetail(id) {
     })
     .catch(err => console.error("Erreur de chargement :", err));
 }
+
+//  Gestion du menu burger
+const burger = document.getElementById("burger");
+const nav = document.getElementById("menu");
+
+burger.addEventListener("click", () => {
+  burger.classList.toggle("active"); // animation des barres
+  nav.classList.toggle("open"); // slide du menu mobile
+  const expanded = burger.getAttribute("aria-expanded") === "true";
+  burger.setAttribute("aria-expanded", !expanded);
+});

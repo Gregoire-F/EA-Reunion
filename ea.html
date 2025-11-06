@@ -6,24 +6,43 @@
     <link href="./src/output.css" rel="stylesheet">
     <title>Les EA</title>
 </head>
-<body class="bg-neutral-100 font-[Manrope]">
-    <nav class="bg-gray-900 fixed-top p-5">
-        <ul class="text-neutral-50 flex justify-evenly">
-            <li><a class="hover:text-green-600" href="./index.html">Accueil</a></li>
-            <li><a class="hover:text-green-600" href="./ea.html">Les EA</a></li>
-            <li><a class="hover:text-green-600" href="./offres.html">Offres d'emploi</a></li>
-            <li><a class="hover:text-green-600" href="./login.html">S'identifier</a></li>
+<body class="bg-neutral-100 font-[Manrope] ">
+  <!-- BARRE DE NAVIGATION -->
+    <header class="fixed w-full p-4 top-0 left-0 flex items-center justify-between bg-[#101828] z-50">
+    <!-- Logo -->
+    <h1 class="text-white text-xl font-semibold m-0"><a href="./index.html">Les EA</a></h1>
+
+    <!-- BOUTON BURGER (affiché <768px) -->
+    <button
+        id="burger"
+        class="burger md:hidden"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="menu">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        
+    </button>
+
+    <!-- NAVIGATION (affichée >=768px et aussi mobile slide-in) -->
+    <nav id="menu" class="nav md:bg-gray-800 md:transform-none md:flex md:items-center md:justify-end md:w-auto md:h-auto md:p-0">
+        <ul class="nav-liste md:flex md:flex-row md:gap-8 text-neutral-100">
+        <li class="nav-item"><a href="./index.html">Accueil</a></li>
+        <li class="nav-item"><a href="./ea.html">Les EA</a></li>
+        <li class="nav-item"><a href="./offres.html">Offres d'emploi</a></li>
+        <li class="nav-item"><a href="./login.html">S'identifier</a></li>
         </ul>
     </nav>
+   </header>
 
 <!-- TITRE ET CARDS ENTREPRISES -->
     
-    <div><h1 class="mt-3 text-[clamp(1rem,3vw,2rem)] font-bold uppercase text-center">Découvrez les entreprises adaptées de La Réunion et contactez-les.</h1></div> 
+    <div class="mt-10 py-8"><h1 class="mt-10 text-[clamp(1rem,3vw,2rem)] font-bold uppercase text-center">Découvrez les entreprises adaptées de La Réunion et contactez-les.</h1></div> 
 
     <div id="entreprises" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 p-6 mx-auto justify-self-center"></div>
     <div id="entreprise-detail" class="hidden"></div>
-    
-    <div class="bg-amber-400">TEST TAILWIND</div>
 
 
 <script src="ea.js"></script>
