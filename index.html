@@ -9,150 +9,139 @@
   <body class="font-[manrope]">
 
   <!-- BARRE DE NAVIGATION -->
-<header class="fixed w-full p-4 top-0 left-0 flex items-center justify-between bg-[#101828] z-50">
-  <!-- Logo -->
-  <h1 class="text-white text-xl font-semibold"><a href="./index.html">Les EA</a></h1>
+  <header class="fixed w-full p-4 top-0 left-0 flex items-center justify-between bg-[#101828] z-50">
+    <!-- Logo -->
+    <div class="text-white text-xl font-semibold">
+      <a href="./index.html">Les EA</a>
+    </div>
 
-  <!-- BOUTON BURGER (affiché <768px) -->
-  <button
-    id="burger"
-    class="burger md:hidden"
-    aria-label="Ouvrir le menu"
-    aria-expanded="false"
-    aria-controls="menu">
+    <!-- BOUTON BURGER -->
+    <button
+      id="burger"
+      class="burger md:hidden"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+      aria-controls="menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-    <span></span>
-    <span></span>
-    <span></span>
+    <!-- NAVIGATION -->
+    <nav id="menu" class="nav" aria-label="Navigation principale">
+      <ul class="nav-liste">
+        <li class="nav-item"><a href="./index.html">Accueil</a></li>
+        <li class="nav-item"><a href="./ea.html">Les EA</a></li>
+        <li class="nav-item"><a href="./offres.html">Offres d'emploi</a></li>
+        <li class="nav-item"><a href="./login.html">S'identifier</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  </button>
-
-  <!-- NAVIGATION (affichée >=768px et aussi mobile slide-in) -->
-  <nav id="menu" class="nav ">
-    <ul class="nav-liste">
-      <li class="nav-item"><a href="./index.html">Accueil</a></li>
-      <li class="nav-item"><a href="./ea.html">Les EA</a></li>
-      <li class="nav-item"><a href="./offres.html">Offres d'emploi</a></li>
-      <li class="nav-item"><a href="./login.html">S'identifier</a></li>
-    </ul>
-  </nav>
-</header>
-
-
-        <!-- VIDEO DE FOND -->
-    <div class="relative w-full h-screen overflow-hidden">
+  <main>
+    <!-- HERO SECTION -->
+    <section class="relative w-full h-screen overflow-hidden">
       <video
         src="/src/img/857048-hd_1920_1080_24fps.mp4"
         autoplay
         muted
         loop
         playsinline
-        class="absolute inset-0 w-full h-full object-cover"
-      ></video>
+        aria-hidden="true"
+        class="absolute inset-0 w-full h-full object-cover">
+      </video>
 
-      <div
-        class="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
-        <!-- TITRE -->
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
         <h1 class="text-[clamp(2rem,3vw,4rem)] font-semibold pointer-events-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
           Entreprises Adaptées de l'île de La Réunion
         </h1>
-        <!-- SLOGAN -->
         <p class="mt-4 text-[clamp(1rem,3vw,2rem)] font-light">
-          Travailler avec une EA, c’est allier performance, impact social et
-          qualité.
+          Travailler avec une EA, c'est allier performance, impact social et qualité.
         </p>
-        <!-- BOUTON DECOUVRIR EA -->
-        <a
-          id="btn-header"
-          class="bg-white/20 backdrop-blur-sm hover:bg-white/40 mt-20 text-white font-medium px-6 py-3 rounded-full drop-shadow-md text-[clamp(1rem,3vw,1.3rem)] cursor-pointer">
+        <a href="#section2"
+          class="bg-white/20 backdrop-blur-sm hover:bg-white/40 mt-20 text-white font-medium px-6 py-3 rounded-full drop-shadow-md text-[clamp(1rem,3vw,1.3rem)]">
           Découvrir les EA
         </a>
       </div>
-    </div>
-<!-- EXTERNALISER SES ACTIVITÉS -->
-    <main class="mx-auto py-16 text-[#101828]">
-      <div id="section2" class="mb-16"></div>
-      <div>
-        <h2 class="text-[clamp(1rem,3vw,2rem)] font-bold uppercase text-center bg-green-700 p-5 text-white">
-          Externalisez vos activités à une Entreprise Adaptée !
-        </h2>
-      </div>
-
-    <div class="bg-green-200 p-6 rounded-2xl mt-4 mx-auto shadow-sm"><h3 class="text-[clamp(1rem,3vw,2rem)] text-center">Confier certaines de vos activités à une Entreprise Adaptée (EA) vous permet de concilier performance économique et impact social. En travaillant avec des EA, vous soutenez l’emploi des personnes en situation de handicap tout en optimisant vos processus opérationnels.</h3></div>
-
-    <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mx-auto p-6 rounded-2xl">
-    
-    <div class="max-w-full rounded-lg border border-gray-200 bg-green-50 p-6 shadow-sm">
-        <h3 class="mb-10 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight text-gray-900">Avantages</h3>
-        <ul class="flex flex-col gap-10">
-          <li class="mb-3 text-[clamp(1rem,3vw,1.5rem)] font-normal text-gray-700 dark:text-gray-400">✅ Engagement RSE fort</li>
-          <li class="mb-3 text-[clamp(1rem,3vw,1.5rem)] font-normal text-gray-700 dark:text-gray-400">✅ Compétitivité accrue grâce aux tarifs réduits EA</li>
-          <li class="mb-3 text-[clamp(1rem,3vw,1.5rem)] font-normal text-gray-700 dark:text-gray-400">✅ Économies sur les contributions AGEFIPH</li>
-          <li class="mb-3 text-[clamp(1rem,3vw,1.5rem)] font-normal text-gray-700 dark:text-gray-400">✅ Qualité des travaux rendus</li>
-        </ul>
-      <div class="mt-2 m-auto flex justify-center">
-        <a href="/ea.html" class="mx-auto rounded-lg bg-green-700 px-5 py-2 text-center text-sm font-medium text-white hover:bg-green-600"> En savoir plus </a>
-      </div>
-    </div>
-    <div class="flex items-stretch">
-        <img
-        src="/src/img/pexels-fauxels-3184291_resultat.webp"
-        alt="Collaboration EA"
-        class="rounded-lg shadow-md w-full h-auto"
-        />
-    </div>
     </section>
 
-    <!-- IMPACT ET CHIFFRES CLÉS -->
-      <div>
-        <h2
-          id=""
-          class="mb-10 mt-10 text-[clamp(1rem,3vw,2rem)] font-bold uppercase text-center bg-green-700 p-5 text-white">
-          Impact et chiffres clés
-        </h2>
-      </div>
-
-      <section class="m-auto p-6 mb-10 text-[clamp(1rem,3vw,1.5rem)]">
-        <ul class="flex justify-evenly">
-          <li>32434 personnes avec une RQTH</li>        
-          <li>7 entreprises adaptées engagées pour l'emploi inclusif</li>
-          <li>+160 personnes engagées dans les EA</li>
-        </ul>
-      </section>
-      
-   <!-- REJOINDRE UNE EA-->
-      <div>
-        <h2
-          id=""
-          class="mb-11 text-[clamp(1rem,3vw,2rem)] font-bold uppercase text-center bg-green-700 p-5 text-white"
-        >
-          Vous souhaitez rejoindre une EA ?
-        </h2>
-      </div>
-
-      <section class="mx-auto p-6 text-[clamp(1rem,3vw,1.5rem)]">
-        <div>
-          <p>
-            Une entreprise adaptée offre un lieu de travail adaptés aux
-            handicaps et besoins de chacun. <br />
-            Le dispositif EA est particulièrement adapté aux personnes souffrant
-            de TSA. <br />
-            Les personnes éloignées de l'emploi peuvent retrouver un
-            épanouissement personnel en intégrant une entreprise adaptée afin de
-            s'accomplir professionnellement.
+    <!-- SECTION EXTERNALISATION -->
+    <section id="section2" class="mx-auto py-16 text-[#101828]">
+      <h2 class="mt-10 text-[clamp(1rem,3vw,2rem)] font-bold uppercase text-center bg-green-700 p-5 text-white">
+        Externalisez vos activités à une Entreprise Adaptée !
+      </h2>
+      <div class="grid grid-cols-1 gap-8 p-6">
+        <div class="bg-green-200 p-6 rounded-2xl mt-4 mx-auto shadow-sm">
+          <p class="text-[clamp(1rem,3vw,2rem)] text-center">
+            Confier certaines de vos activités à une Entreprise Adaptée (EA) vous permet de concilier performance économique et impact social. <br><br> 
+            En travaillant avec des EA, vous soutenez l'emploi des personnes en situation de handicap tout en optimisant vos processus opérationnels.
           </p>
         </div>
-        <div class="flex justify-center mt-5">
-          <button
-            class="cursor-pointer rounded-md bg-green-700 px-4 py-3 text-center text-[clamp(0.875rem,3vw,1.35rem)] font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-green-600 mt-5">
-            <a href="./offres.html">Rejoindre une EA </a>
-          </button>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch rounded-2xl">
+          <article class="max-w-full rounded-lg border border-gray-200 bg-green-50 p-6 shadow-sm">
+            <h3 class="mb-10 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight text-gray-900">Avantages</h3>
+            <ul class="flex flex-col gap-10">
+              <li class="mb-3 text-[clamp(1rem,3vw,1.5rem)] font-normal text-gray-700">✅ Engagement RSE fort</li>
+              <li class="mb-3 text-[clamp(1rem,3vw,1.5rem)] font-normal text-gray-700">✅ Compétitivité accrue grâce aux tarifs réduits EA</li>
+              <li class="mb-3 text-[clamp(1rem,3vw,1.5rem)] font-normal text-gray-700">✅ Économies sur les contributions AGEFIPH</li>
+              <li class="mb-3 text-[clamp(1rem,3vw,1.5rem)] font-normal text-gray-700">✅ Qualité des travaux rendus</li>
+            </ul>
+            <div class="mt-10 flex justify-center">
+              <a href="/ea.html" class="mx-auto rounded-lg bg-green-700 px-5 py-2 text-center text-sm font-medium text-white hover:bg-green-600">
+                En savoir plus
+              </a>
+            </div>
+          </article>
+          <figure class="flex items-stretch">
+            <img
+              src="/src/img/pexels-fauxels-3184291_resultat.webp"
+              alt=""
+              class="rounded-lg shadow-md w-full h-auto"
+            />
+          </figure>
         </div>
-      </section>
-    </main>
+     </div>
+    </section>
 
-    <div class="bg-amber-400">TEST TAILWIND</div>
+    <!-- SECTION CHIFFRES CLÉS -->
+    <section class="mx-auto text-[#101828]">
+      <h2 class="mb-10 text-[clamp(1rem,3vw,2rem)] font-bold uppercase text-center bg-green-700 p-5 text-white">
+        Impact et chiffres clés
+      </h2>
 
-    <script src="index.js"></script>
+      <div class="m-auto p-6 mb-10">
+        <ul class="flex justify-evenly text-[clamp(1rem,3vw,1.5rem)]">
+          <li><strong>32434</strong> personnes avec une RQTH</li>        
+          <li><strong>7</strong> entreprises adaptées engagées pour l'emploi inclusif</li>
+          <li><strong>+160</strong> personnes engagées dans les EA</li>
+        </ul>
+      </div>
+    </section>
+      
+    <!-- SECTION REJOINDRE UNE EA -->
+    <section class="mx-auto text-[#101828]">
+      <h2 class="mb-10 text-[clamp(1rem,3vw,2rem)] font-bold uppercase text-center bg-green-700 p-5 text-white">
+        Vous souhaitez rejoindre une EA ?
+      </h2>
+
+      <div class="mx-auto p-6 text-[clamp(1rem,3vw,1.5rem)]">
+        <p>
+          Une entreprise adaptée offre un lieu de travail adaptés aux handicaps et besoins de chacun. <br>
+          Le dispositif EA est particulièrement adapté aux personnes souffrant de TSA. <br>
+          Les personnes éloignées de l'emploi peuvent retrouver un épanouissement personnel en intégrant une entreprise adaptée afin de s'accomplir professionnellement.
+        </p>
+        
+        <div class="flex justify-center mt-5">
+          <a href="./offres.html" 
+             class="cursor-pointer rounded-md bg-green-700 px-4 py-3 text-center text-[clamp(0.875rem,3vw,1.35rem)] font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-green-600 mt-5">
+            Rejoindre une EA
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="index.js"></script>
   </body>
 </html>
