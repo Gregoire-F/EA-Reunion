@@ -477,6 +477,9 @@
   .bg-green-700 {
     background-color: var(--color-green-700);
   }
+  .bg-neutral-50 {
+    background-color: var(--color-neutral-50);
+  }
   .bg-neutral-100 {
     background-color: var(--color-neutral-100);
   }

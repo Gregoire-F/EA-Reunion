@@ -6,7 +6,7 @@
     <link href="./src/output.css" rel="stylesheet" />
     <title>Les EA de La Reunion</title>
   </head>
-  <body class="font-[manrope]">
+  <body class="font-[manrope] bg-neutral-50">
 
   <!-- BARRE DE NAVIGATION -->
   <header class="fixed w-full p-4 top-0 left-0 flex items-center justify-between bg-[#101828] z-50">
@@ -58,8 +58,8 @@
         <p class="mt-4 text-[clamp(1rem,3vw,2rem)] font-light">
           Travailler avec une EA, c'est allier performance, impact social et qualité.
         </p>
-        <a href="#section2"
-          class="bg-white/20 backdrop-blur-sm hover:bg-white/40 mt-20 text-white font-medium px-6 py-3 rounded-full drop-shadow-md text-[clamp(1rem,3vw,1.3rem)]">
+        <a id="btn-header"
+          class="bg-white/20 backdrop-blur-sm hover:bg-white/40 mt-20 text-white font-medium px-6 py-3 rounded-full drop-shadow-md text-[clamp(1rem,3vw,1.3rem)] cursor-pointer">
           Découvrir les EA
         </a>
       </div>
@@ -67,13 +67,12 @@
 
     <!-- SECTION EXTERNALISATION -->
     <section id="section2" class="mx-auto py-16 text-[#101828]">
-      <h2 class="mt-10 text-[clamp(1rem,3vw,2rem)] font-bold uppercase text-center bg-green-700 p-5 text-white">
+      <h2 class="text-[clamp(1rem,3vw,2rem)] font-bold uppercase text-center bg-green-700 p-5 text-white">
         Externalisez vos activités à une Entreprise Adaptée !
       </h2>
       <div class="grid grid-cols-1 gap-8 p-6">
         <div class="bg-green-200 p-6 rounded-2xl mt-4 mx-auto shadow-sm">
           <p class="text-[clamp(1rem,3vw,2rem)] text-center">
-            Confier certaines de vos activités à une Entreprise Adaptée (EA) vous permet de concilier performance économique et impact social. <br><br> 
             En travaillant avec des EA, vous soutenez l'emploi des personnes en situation de handicap tout en optimisant vos processus opérationnels.
           </p>
         </div>
@@ -88,7 +87,7 @@
               <li class="mb-3 text-[clamp(1rem,3vw,1.5rem)] font-normal text-gray-700">✅ Qualité des travaux rendus</li>
             </ul>
             <div class="mt-10 flex justify-center">
-              <a href="/ea.html" class="mx-auto rounded-lg bg-green-700 px-5 py-2 text-center text-sm font-medium text-white hover:bg-green-600">
+              <a href="/ea.html" class="mx-auto rounded-lg bg-green-700 px-4 py-3 text-center text-sm font-medium text-white hover:bg-green-600 transition duration-200 ease-in-out uppercase text-[clamp(0.875rem,3vw,1.25rem)]">
                 En savoir plus
               </a>
             </div>
@@ -97,8 +96,7 @@
             <img
               src="/src/img/pexels-fauxels-3184291_resultat.webp"
               alt=""
-              class="rounded-lg shadow-md w-full h-auto"
-            />
+              class="rounded-lg shadow-md w-full h-auto"/>
           </figure>
         </div>
      </div>
@@ -125,20 +123,27 @@
         Vous souhaitez rejoindre une EA ?
       </h2>
 
-      <div class="mx-auto p-6 text-[clamp(1rem,3vw,1.5rem)]">
-        <p>
-          Une entreprise adaptée offre un lieu de travail adaptés aux handicaps et besoins de chacun. <br>
-          Le dispositif EA est particulièrement adapté aux personnes souffrant de TSA. <br>
-          Les personnes éloignées de l'emploi peuvent retrouver un épanouissement personnel en intégrant une entreprise adaptée afin de s'accomplir professionnellement.
-        </p>
-        
-        <div class="flex justify-center mt-5">
-          <a href="./offres.html" 
-             class="cursor-pointer rounded-md bg-green-700 px-4 py-3 text-center text-[clamp(0.875rem,3vw,1.35rem)] font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-green-600 mt-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 text-[clamp(1rem,3vw,1.5rem)] mx-auto gap-8 p-6">
+        <figure class="flex items-stretch">
+            <img
+              src="/src/img/pexels-tima-miroshnichenko-5439469_resultat.webp"
+              alt=""
+              class="rounded-lg shadow-md w-full h-auto"/>
+        </figure>
+        <div class="m-auto grid grid-cols-1">
+          <p>
+            Une entreprise adaptée offre un lieu de travail adaptés aux handicaps et besoins de chacun. <br>
+            Le dispositif EA est particulièrement adapté aux personnes souffrant de TSA. <br>
+            Les personnes éloignées de l'emploi peuvent retrouver un épanouissement personnel en intégrant une entreprise adaptée afin de s'accomplir professionnellement.
+          </p>
+          <div class="flex justify-center mt-5">
+          <a href="./offres.html" class="cursor-pointer rounded-md bg-green-700 px-4 py-3 text-center text-[clamp(0.875rem,3vw,1.35rem)] font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-green-600 mt-10">
             Rejoindre une EA
           </a>
+          </div>
         </div>
       </div>
+      
     </section>
   </main>
 
