@@ -85,6 +85,10 @@ function afficherOffres(offres) {
       <p><strong>Type de contrat :</strong> ${acf.type_de_contrat || "Non précisé"}</p>
       <p><strong>Lieu :</strong> ${acf.localisation || "Non précisé"}</p>
       <p><strong>Date de publication :</strong> ${new Date(offre.date).toLocaleDateString()}</p>
+      <div class="flex gap-4 mt-4 justify-center">
+      <button class="p-3 text-neutral-50 flex text-center bg-green-700 hover:bg-green-600 cursor-pointer rounded-lg">Postuler</button>
+      <button class="p-3 flex text-center bg-red-200 text-red-500 hover:text-red-600 hover:bg-red-300 cursor-pointer rounded-lg">Sauvegarder</button>
+      </div>
     `;
     container.appendChild(card);
   });
