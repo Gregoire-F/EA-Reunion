@@ -1012,7 +1012,7 @@
 }
 @font-face {
   font-family: 'Manrope';
-  src: url('src/fonts/Manrope-VariableFont_wght.ttf') format(truetype);
+  src: url('./fonts/Manrope-VariableFont_wght.ttf') format(truetype);
   font-display: swap;
 }
 .font-manrope {
