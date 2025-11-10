@@ -104,7 +104,7 @@ function afficherDetail(id) {
         <div class="mb-6 mt-6 mx-auto max-w-2xl bg-neutral-100 p-6 rounded-lg shadow-md">
         <p><strong>Activités externalisables :</strong> ${acf.activites_externalisables || "Non précisé"}</p>
         </div>
-        <button id="retour" class="mt-6 bg-gray-800 text-neutral-100 rounded-lg p-3 cursor-pointer block hover:underline">⬅ Retour à la liste</button>
+        <button id="retour" class="flex mx-auto mt-6 bg-gray-800 text-neutral-100 rounded-lg p-3 cursor-pointer hover:underline">⬅ Retour à la liste</button>
       `;
 
       document.getElementById("retour").addEventListener("click", () => {

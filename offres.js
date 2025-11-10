@@ -86,7 +86,7 @@ function afficherOffres(offres) {
       <p><strong>Lieu :</strong> ${acf.localisation || "Non précisé"}</p>
       <p><strong>Date de publication :</strong> ${new Date(offre.date).toLocaleDateString()}</p>
       <div class="flex gap-4 mt-4 justify-center">
-      <button class="p-3 text-neutral-50 flex text-center bg-green-700 hover:bg-green-600 cursor-pointer rounded-lg">Postuler</button>
+       <a href="postuler.html?offreId=${offre.id}&title=${encodeURIComponent(offre.title.rendered)}" class="btn-postuler p-3 text-neutral-50 flex text-center bg-green-700 hover:bg-green-600 cursor-pointer rounded-lg" data-offre='${JSON.stringify(offre)}'>Postuler</a>
       <button class="p-3 flex text-center bg-red-200 text-red-500 hover:text-red-600 hover:bg-red-300 cursor-pointer rounded-lg">Sauvegarder</button>
       </div>
     `;
@@ -165,4 +165,12 @@ burger.addEventListener("click", () => {
   nav.classList.toggle("open"); // slide du menu mobile
   const expanded = burger.getAttribute("aria-expanded") === "true";
   burger.setAttribute("aria-expanded", !expanded);
+});
+
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('btn-postuler')) {
+    const offre = JSON.parse(e.target.dataset.offre);
+    localStorage.setItem('offreSelectionnee', JSON.stringify(offre));
+    window.location.href = 'postuler.html';
+  }
 });

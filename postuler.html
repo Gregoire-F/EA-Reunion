@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="./src/output.css" rel="stylesheet" />
+    <title>Postuler</title>
+  </head>
+  <body class="bg-neutral-100 font-[Manrope]">
+    <header class="fixed w-full p-4 top-0 left-0 bg-[#101828] z-50">
+      <div class="text-white text-xl font-semibold"><a href="./index.html">Les EA</a></div>
+    </header>
+
+    <main class="pt-24 max-w-3xl mx-auto p-6 mt-10">
+      <article class="bg-white rounded-2xl shadow p-6">
+        <div id="offre-container" class="border rounded-lg shadow-sm p-6 mb-5"></div>
+
+        <form id="formPostuler" class="space-y-6" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="offre_id" id="offre_id" />
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input name="prenom" required placeholder="Prénom *" class="border rounded p-3" />
+            <span class="text-red-600 text-sm hidden" id="error-prenom"></span>
+
+            <input name="nom" required placeholder="Nom *" class="border rounded p-3" />
+            <span class="text-red-600 text-sm hidden" id="error-nom"></span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input name="email" type="email" required placeholder="E-mail *" class="border rounded p-3" />
+            <span class="text-red-600 text-sm hidden" id="error-email"></span>
+            <input name="telephone" required type="tel" placeholder="Téléphone *" class="border rounded p-3" />
+            <span class="text-red-600 text-sm hidden" id="error-email"></span>
+          </div>
+
+          <input name="adresse" placeholder="Adresse" class="border rounded p-3 w-full" />
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input name="ville" required placeholder="Ville *" class="border rounded p-3" />
+            <span class="text-red-600 text-sm hidden" id="error-ville"></span>
+            <input name="code_postal" required placeholder="Code postal *" class="border rounded p-3" />
+            <span class="text-red-600 text-sm hidden" id="error-code_postal"></span>
+          </div>
+
+          <label class="block">
+            <span class="text-sm">Poste Actuel *</span>
+            <input name="poste_actuel" required class="border rounded p-3 w-full" />
+            <span class="text-red-600 text-sm hidden" id="error-poste"></span>
+          </label>
+
+          <label class="block">
+            <span class="text-sm">Années d'expérience *</span>
+            <input name="experience" required placeholder="Années d'expérience dans le poste visé" type="number" min="0" class="border rounded p-3 w-full" />
+          </label>
+
+          <label class="block">
+            <span class="text-sm">Diplômes / Formations *</span>
+            <textarea name="diplomes" placeholder="Écrivez le noms de vos derniers diplômes ou denrières formations succintement" rows="3" class="border rounded p-3 w-full" required maxlength="350"></textarea>
+            <span class="text-red-600 text-sm hidden" id="error-poste"></span>
+          </label>
+
+          <label class="block">
+            <span class="text-sm">LinkedIn (optionnel)</span>
+            <input name="linkedin" placeholder="https://..." class="border rounded p-3 w-full" />
+          </label>
+
+          <label class="block border border-dashed p-4 rounded-2xl hover:bg-green-100 cursor-pointer">
+            <span class="text-sm font-medium cursor-pointer">CV format accepté : (pdf, doc, docx)</span>
+            <input name="cv" type="file" accept=".pdf,.doc,.docx" required class="mt-2" />
+            <span class="text-red-600 text-sm hidden" id="error-cv"></span>
+          </label>
+
+          <label class="block">
+            <span class="text-sm">Portfolio (optionnel, si concerné)</span>
+            <input name="linkedin" placeholder="https://..." class="border rounded p-3 w-full" />
+          </label>
+
+          <label class="block border border-dashed p-4 rounded-2xl hover:bg-green-100 cursor-pointer">
+            <span class="text-sm font-medium cursor-pointer">Portfolio (optionnel, si concerné)</span>
+            <input name="autres_docs[]" type="file" multiple class="mt-2" />
+          </label>
+
+          <label class="block">
+            <span class="text-sm">Message / lettre de motivation</span>
+            <textarea name="lettre_motivation" rows="5" class="border rounded p-3 w-full" maxlength="1000"></textarea>
+          </label>
+
+          <div class="flex gap-4 justify-end">
+            <a href="./offres.html" class="p-3 rounded bg-red-600 hover:bg-red-500 text-neutral-50">Retour</a>
+            <button type="submit" class="p-3 rounded bg-green-700 hover:bg-green-600 text-neutral-50 cursor-pointer">Envoyer ma candidature</button>
+          </div>
+
+          <div id="formResult" class="mt-4 text-center"></div>
+        </form>
+      </article>
+    </main>
+
+    <script src="postuler.js"></script>
+  </body>
+</html>
