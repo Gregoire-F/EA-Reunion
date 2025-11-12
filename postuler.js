@@ -15,6 +15,9 @@ if (!offreJSON) {
     <p><strong>Type de contrat :</strong> ${acf.type_de_contrat || "Non précisé"}</p>
     <p><strong>Lieu :</strong> ${acf.localisation || "Non précisé"}</p>
   `;
+
+  // Définir l'ID de l'offre dans le formulaire
+  document.getElementById('offre_id').value = offre.id || '';
 }
 
 const form = document.getElementById("formPostuler");
@@ -38,7 +41,7 @@ form.addEventListener("submit", async (e) => {
     const errorSpan = document.getElementById(`error-${field.name}`);
     if (!field.value) {
       allFilled = false;
-      errorSpan.textContent = `${field.placeholder} est requis.`;
+      errorSpan.textContent = `${field.placeholder || field.name} est requis.`;
       errorSpan.classList.remove('hidden');
     }
   });
@@ -48,42 +51,38 @@ form.addEventListener("submit", async (e) => {
   }
 
   result.textContent = "Envoi en cours...";
+  result.className = "mt-4 text-blue-600";
 
   const fd = new FormData(form);
 
   try {
-    console.log("Données envoyées:", Object.fromEntries(fd.entries())); // Affiche les données envoyées
-    
+    console.log("Données envoyées:", Object.fromEntries(fd.entries()));
+
     const resp = await fetch(
       "http://ealareunion.local/wp-json/postuler/v1/send",
       {
         method: "POST",
         body: fd,
         credentials: 'include',
-        mode: 'cors'
       }
     );
-    
-    // Log de la réponse complète
+
     console.log("Status:", resp.status);
-    console.log("Headers:", resp.headers);
-    
     const json = await resp.json();
     console.log("Réponse:", json);
-    
+
     if (resp.ok && json.success) {
-      result.className = "mt-4 text-green-600";
-      result.textContent = "Candidature envoyée. Merci !";
+      result.className = "mt-4 text-green-600 font-semibold";
+      result.textContent = "✅ Candidature envoyée avec succès. Merci !";
       form.reset();
     } else {
-      result.className = "mt-4 text-red-600";
+      result.className = "mt-4 text-red-600 font-semibold";
       result.textContent = json.message || "Erreur lors de l'envoi.";
       console.error(json);
     }
   } catch (err) {
-    console.error("Erreur détaillée:", err);
-    result.className = "mt-4 text-red-600";
-    result.textContent = "Erreur réseau. Réessayez. " + err.message;
-    console.error(err);
+    result.className = "mt-4 text-red-600 font-semibold";
+    result.textContent = "Erreur réseau. Réessayez. Détail : " + err.message;
+    console.error("Erreur complète:", err);
   }
 });
