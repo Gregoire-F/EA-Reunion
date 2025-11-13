@@ -18,67 +18,71 @@
         <form id="formPostuler" class="space-y-6" enctype="multipart/form-data" novalidate>
           <input type="hidden" name="offre_id" id="offre_id" />
 
+          <!-- Prénom -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <input name="prenom" required placeholder="Prénom *" class="border rounded p-3" />
             <span class="text-red-600 text-sm hidden" id="error-prenom"></span>
-
+          <!-- Nom -->
             <input name="nom" required placeholder="Nom *" class="border rounded p-3" />
             <span class="text-red-600 text-sm hidden" id="error-nom"></span>
           </div>
-
+          <!-- E-Mail -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input name="email" type="email" required autocomplete="email" placeholder="E-mail *" class="border rounded p-3" />
+            <input name="email" type="email" required placeholder="E-mail *" pattern="^[a-zA-Z0-9._%+-]+@monentreprise\.fr$" class="border rounded p-3" />
             <span class="text-red-600 text-sm hidden" id="error-email"></span>
-            <input name="telephone" required type="tel" placeholder="Téléphone *" class="border rounded p-3" />
-            <span class="text-red-600 text-sm hidden" id="error-email"></span>
+            <!--Téléphone -->
+            <input name="telephone" required type="number" placeholder="Téléphone *" class="border rounded p-3" />
+            <span class="text-red-600 text-sm hidden" id="error-telephone"></span>
           </div>
-
+          <!-- Adresse -->
           <input name="adresse" placeholder="Adresse" class="border rounded p-3 w-full" />
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Ville -->
             <input name="ville" required placeholder="Ville *" class="border rounded p-3" />
             <span class="text-red-600 text-sm hidden" id="error-ville"></span>
-            <input name="code_postal" required placeholder="Code postal *" class="border rounded p-3" />
+            <!-- Code postal -->
+            <input name="code_postal" required placeholder="Code postal *" type="number" class="border rounded p-3" />
             <span class="text-red-600 text-sm hidden" id="error-code_postal"></span>
           </div>
-
+          <!-- Poste actuel -->
           <label class="block">
             <span class="text-sm">Poste Actuel *</span>
             <input name="poste_actuel" required class="border rounded p-3 w-full" />
             <span class="text-red-600 text-sm hidden" id="error-poste"></span>
           </label>
-
+          <!-- Experience -->
           <label class="block">
             <span class="text-sm">Années d'expérience *</span>
             <input name="experience" required placeholder="Années d'expérience dans le poste visé" type="number" min="0" class="border rounded p-3 w-full" />
           </label>
-
+          <!-- Diplomes -->
           <label class="block">
             <span class="text-sm">Diplômes / Formations *</span>
             <textarea name="diplomes" placeholder="Écrivez le noms de vos derniers diplômes ou denrières formations succintement" rows="3" class="border rounded p-3 w-full" required maxlength="350"></textarea>
             <span class="text-red-600 text-sm hidden" id="error-poste"></span>
           </label>
-
+          <!-- Lien Linkedin -->
           <label class="block">
             <span class="text-sm">LinkedIn (optionnel)</span>
             <input name="linkedin" placeholder="https://..." class="border rounded p-3 w-full" />
           </label>
-
+          <!-- CV -->
           <label class="block border border-dashed p-4 rounded-2xl hover:bg-green-100 cursor-pointer">
             <span class="text-sm font-medium cursor-pointer">CV format accepté : (pdf, doc, docx)</span>
             <input name="cv" type="file" accept=".pdf,.doc,.docx" required class="mt-2" />
             <span class="text-red-600 text-sm hidden" id="error-cv"></span>
           </label>
-
+          <!-- Portfolio -->
           <label class="block">
             <span class="text-sm">Portfolio (optionnel, si concerné)</span>
             <input name="linkedin" placeholder="https://..." class="border rounded p-3 w-full" />
           </label>
-
+          <!-- AUTRES DOCS -->
           <label class="block border border-dashed p-4 rounded-2xl hover:bg-green-100 cursor-pointer">
             <span class="text-sm font-medium cursor-pointer">Portfolio (optionnel, si concerné)</span>
             <input name="autres_docs[]" type="file" multiple class="mt-2" />
           </label>
-
+          <!-- Lettre de motivation -->
           <label class="block">
             <span class="text-sm">Message / lettre de motivation</span>
             <textarea name="lettre_motivation" rows="5" class="border rounded p-3 w-full" maxlength="1000"></textarea>

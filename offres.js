@@ -178,11 +178,10 @@ document.addEventListener('click', async (e) => {
   btn.disabled = true;
 
   try {
-    const response = await fetch(`${ROUTES.FAVORIS}`, { //wpAPISetttings sert a recuperer l'url de base de l'api
+    const response = await fetch(`${ROUTES.FAVORIS}`, { //ROUTES.FAVORIS crée dans api.js
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // 'X-WP-Nonce': wpApiSettings.nonce
       },
       body: JSON.stringify({ job_id: jobId })
     });
