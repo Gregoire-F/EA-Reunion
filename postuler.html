@@ -41,7 +41,7 @@
             <input name="ville" required placeholder="Ville *" class="border rounded p-3" />
             <span class="text-red-600 text-sm hidden" id="error-ville"></span>
             <!-- Code postal -->
-            <input name="code_postal" required placeholder="Code postal *" type="number" class="border rounded p-3" />
+            <input name="code_postal" required placeholder="Code postal *" type="number" max="99999" class="border rounded p-3" />
             <span class="text-red-600 text-sm hidden" id="error-code_postal"></span>
           </div>
           <!-- Poste actuel -->
@@ -53,7 +53,7 @@
           <!-- Experience -->
           <label class="block">
             <span class="text-sm">Années d'expérience *</span>
-            <input name="experience" required placeholder="Années d'expérience dans le poste visé" type="number" min="0" class="border rounded p-3 w-full" />
+            <input name="experience" required placeholder="Années d'expérience dans le poste visé" type="number" min="0" max="40" class="border rounded p-3 w-full" />
           </label>
           <!-- Diplomes -->
           <label class="block">
@@ -69,8 +69,7 @@
           <!-- CV -->
           <label class="block border border-dashed p-4 rounded-2xl hover:bg-green-100 cursor-pointer">
             <span class="text-sm font-medium cursor-pointer">CV format accepté : (pdf, doc, docx)</span>
-            <input name="cv" type="file" accept=".pdf,.doc,.docx" required class="mt-2" />
-            <span class="text-red-600 text-sm hidden" id="error-cv"></span>
+            <input name="cv" type="file" accept=".pdf,.doc,.docx" class="mt-2" />
           </label>
           <!-- Portfolio -->
           <label class="block">

@@ -1,5 +1,5 @@
 const ROUTES = {
-    FAVORIS: 'http://ealareunion.local/wp-json/favoris/v1/saved-jobs',
+    FAVORIS: 'http://ealareunion.local/wp-json/favoris/v1/add',
 }
 
 export {ROUTES};
