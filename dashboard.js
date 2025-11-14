@@ -40,7 +40,6 @@ function activerOnglet(onglet) {
   document.querySelectorAll(".nav-item").forEach((item) => {
     item.classList.remove("nav-active");
   });
-  e.target.closest("button").classList.add("nav-active");
 
   // Fermer le menu mobile
   fermerMenu();
@@ -110,7 +109,6 @@ document.getElementById("btn-deconnexion").addEventListener("click", () => {
 
 // ========== INITIALISATION AU CHARGEMENT DE LA PAGE ==========
 document.addEventListener("DOMContentLoaded", () => {
-  // initUI();
-  activerOnglet("welcome"); // Démarrer sur les favoris
-  chargerProfil();
+    activerOnglet("favoris", null);
+    chargerProfil();
 });
